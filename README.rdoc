@@ -42,10 +42,3 @@ Posts
 
 Posts belong to Authors;
 Authors can have many Posts.
-
-As a user, I want to click a link so I can write a new post.
-As a user, I want to click a field to add a comment to an existing post.
-As a user, I want to click an up-vote button to promote an existing post.
-As the site owner, I want to use a login system to prevent my site from getting spammed by bots.
-As the site owner, I want to only allow registered users to write new posts.
-As the designer, I just want the page to look good.
