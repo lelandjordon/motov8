@@ -1,23 +1,23 @@
-<%= form_for @artist do |f| %>
-  <% if @artist.errors.any? %>
+<%= form_for @post do |f| %>
+  <% if @post.errors.any? %>
     <div id="error_explanation">
       <ul>
         <h2>errors:</h2>
-        <% @artist.errors.full_messages.each do |message| %>
+        <% @post.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end  %>
-  
-  <%= f.label :name %>
-  <%= f.text_field :name %>
 
-  <%= f.label :photo_url %>
-  <%= f.text_field :photo_url %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
-  <%= f.label :nationality %>
-  <%= f.text_field :nationality %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.label :author %>
+  <%= f.text_field :author %>
 
   <%= f.submit %>
 <% end %>

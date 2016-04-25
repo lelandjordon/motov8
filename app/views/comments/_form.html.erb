@@ -1,0 +1,24 @@
+<%= form_for @comment do |f| %>
+
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <h2>errors:</h2>
+        <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end  %>
+
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.label :post_id %>
+  <%= f.collection_select(:post_id, Post.all, :id, :title) %>
+
+  <%= f.submit %>
+<% end %>

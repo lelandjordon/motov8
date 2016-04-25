@@ -1,19 +1,19 @@
-<section class="artist-info">
+<section class="post-info">
   <h2>
-    <%= @artist.name %>
-    <%= link_to "(edit)", edit_artist_path(@artist) %>
+    <%= @post.title %>
+    <%= link_to "(edit)", edit_post_path(@post) %>
   </h2>
 
-  <p class="nationality"><%= @artist.nationality %></p>
+  <p class="nationality"><%= @post.author %></p>
 </section>
 
-<img class='artist-photo' src="<%= @artist.photo_url %>">
+<p><%= @post.body %></p>
 
-<section class="artist-songs">
-  <h2>Songs</h2>
+<section class="post-comments">
+  <h2>comments</h2>
   <ul>
-    <% @artist.songs.each do |song| %>
-      <li><%= link_to song.title, song %></li>
+    <% @post.comments.each do |comment| %>
+      <li><%= link_to comment.author, comment %></li>
     <% end %>
   </ul>
 </section>
