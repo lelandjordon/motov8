@@ -1,19 +1,19 @@
-class UsersController < ApplicationController
+class AuthorsController < ApplicationController
   def new
-    @user = User.new
+    @author = Author.new
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to artists_path, notice: "Signed Up Sucessfully!"
+    @author = Author.new(author_params)
+    if @author.save
+      redirect_to posts_path, notice: "Signed Up Sucessfully!"
     else
       render :new
     end
   end
 
   private
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+  def author_params
+    params.require(:author).permit(:email, :password, :password_confirmation)
   end
 end
