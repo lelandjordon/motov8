@@ -1,3 +1,4 @@
 class Post < ActiveRecord::Base
-  belongs_to :Author
+  has_many :comments, dependent: :destroy
+  
 end
