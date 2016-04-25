@@ -1,22 +1,3 @@
-Project 2 app ERDs
-
-Authors
-- name
-- email
-- posts
-
-
-Posts
-- content
-- author
-
-Comments?   <-- Should this be a third object model, or an attribute to an existing model?
-- content
-- Author to which it's related
-- post to which it's related
-
-Posts belong to Authors;
-Authors can have many Posts.
 
 User Stories:
 
