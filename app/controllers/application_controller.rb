@@ -10,4 +10,7 @@ class ApplicationController < ActionController::Base
       return nil
     end
   end
+  alias :current_user :current_author
+  helper_method :current_user
+
 end
