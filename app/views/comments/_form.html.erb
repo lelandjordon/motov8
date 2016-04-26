@@ -11,11 +11,14 @@
     </div>
   <% end  %>
 
-  <%= f.label :author %>
-  <%= f.text_field :author %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
   <%= f.label :body %>
   <%= f.text_area :body %>
+
+  <%= f.label :author %>
+  <%= f.text_field :author %>
 
   <%= f.label :post_id %>
   <%= f.collection_select(:post_id, Post.all, :id, :title) %>

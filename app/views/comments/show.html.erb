@@ -1,10 +1,10 @@
 <h2>
-  <%= @song.title %>
-  <%= link_to "(edit)", edit_song_path(@song) %>
+  <%= @comment.title %>
+  <%= link_to "(edit)", edit_comment_path(@comment) %>
 </h2>
 
-<h3>By: <%= @song.artist.name %></h3>
+<h3>By: <%= @comment.author %></h3>
 
-Album: <%= @song.album %></br>
+<%= @comment.body %></br>
 
-<audio controls src="<%= @song.preview_url %>"></audio>
+<%= @comment.author %>
