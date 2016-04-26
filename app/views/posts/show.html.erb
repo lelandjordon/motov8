@@ -13,7 +13,11 @@
   <h2>comments</h2>
   <ul>
     <% @post.comments.each do |comment| %>
-      <li><%= link_to comment.title, comment %></li>
+      <li><%= comment.title  %>
+        <%= comment.body %>
+        <%= link_to comment.author, comment %>
+      </li>
     <% end %>
+    <%= link_to "New Comment", new_comment_path %>
   </ul>
 </section>

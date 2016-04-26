@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         # if so, log them in
         session[:author_id] = author.id
         flash[:notice] = "Logged in as #{author.email}!"
-        redirect_to artists_path
+        redirect_to posts_path
       else
         # else, send them back to the log in form
         render :new and return
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:author_id] = nil
-    redirect_to artists_path, notice: "Signed out!"
+    redirect_to posts_path, notice: "Signed out!"
   end
 
 end
