@@ -18,8 +18,5 @@
   <%= f.text_area :body, :maxlength => 141, :placeholder => "141 characters max" %>
 
 
-  <%= f.label :post_id %>
-  <%= f.collection_select(:post_id, Post.all, :id, :title) %>
-
   <%= f.submit %>
 <% end %>

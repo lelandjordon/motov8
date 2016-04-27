@@ -8,12 +8,14 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @post = Post.find(params[:post_id])
   end
 
   def create
-
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create(comment_params.merge(author: current_author))
     if @comment.save
-      redirect_to @comment.post, notice: "#{@comment.title} sucessfully created."
+      redirect_to post_path(@post), notice: "#{@comment.title} sucessfully created."
     else
       render :new
     end
@@ -24,6 +26,7 @@ class CommentsController < ApplicationController
 
   def update
     @post = Post.find(params[:post_id])
+    @comment.update(comment_params.merge(user:current_user))
     if @comment.update(comment_params)
       redirect_to @comment.post, notice: "#{@comment.title} sucessfully updated."
     else
