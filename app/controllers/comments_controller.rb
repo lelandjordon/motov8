@@ -1,18 +1,16 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def index
-    @comments = Comment.all
   end
 
   def show
-    @comment = Comment.find(params[:id])
   end
 
   def new
-    @comment = Comment.new
   end
 
   def create
-    @comment = Comment.new(comment_params)
 
     if @comment.save
       redirect_to @comment, notice: "#{@comment.title} sucessfully created."
@@ -22,11 +20,9 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:id])
   end
 
   def update
-    @comment = Comment.find(params[:id])
 
     if @comment.update(comment_params)
       redirect_to @comment, notice: "#{@comment.title} sucessfully updated."
@@ -36,7 +32,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
     @comment.destroy
 
     redirect_to comments_path, notice: "#{@comment.title} destroyed."
