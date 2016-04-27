@@ -6,10 +6,10 @@ class Ability
 
     if user
       can :create, Post
-      can :destroy, Post
+      can [:update, :destroy], Post, :author_id => user.id
+      can :create, Comment
     end
 
-    can [:update, :destroy], Post, :user_id => user.id
 
     # if user.admin
     #   can :manage, Post

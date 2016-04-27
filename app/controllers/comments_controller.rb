@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def create
 
     if @comment.save
-      redirect_to @comment, notice: "#{@comment.title} sucessfully created."
+      redirect_to @comment.post, notice: "#{@comment.title} sucessfully created."
     else
       render :new
     end

@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     authorize! :create, @post
-    @post.author_id = current_author
+    @post.author = current_author
     if @post.save
       redirect_to @post, notice: "#{@post.title} sucessfully created."
     else
