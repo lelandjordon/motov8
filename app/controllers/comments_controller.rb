@@ -23,9 +23,9 @@ class CommentsController < ApplicationController
   end
 
   def update
-
+    @post = Post.find(params[:post_id])
     if @comment.update(comment_params)
-      redirect_to @comment, notice: "#{@comment.title} sucessfully updated."
+      redirect_to @comment.post, notice: "#{@comment.title} sucessfully updated."
     else
       render :edit
     end

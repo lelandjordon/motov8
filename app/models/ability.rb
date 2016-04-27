@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     can :read, Post
-
+    can :read, Comment
     if user
       can :create, Post
       can [:update, :destroy], Post, :author_id => user.id

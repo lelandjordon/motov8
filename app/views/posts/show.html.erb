@@ -1,16 +1,18 @@
 <section class="post-info">
   <h2>
     <%= @post.title %>
-    <%= link_to "(edit)", edit_post_path(@post) %>
+    <% if can? :update, @post %>
+      <%= link_to "(edit)", edit_post_path(@post) %>
+    <% end %>
   </h2>
 
-  <%= @post.author.email %></p>
+  <p>By: <%= @post.author.email %></p>
 </section>
 
-<p><%= @post.body %></p>
-
+<h3><%= @post.body %></h3>
+<!-- 
 <section class="post-comments">
-  <h2>comments</h2>
+  <p>comments</p>
   <ul>
     <% @post.comments.each do |comment| %>
       <li><%= comment.title  %>
@@ -20,4 +22,20 @@
     <% end %>
     <%= link_to "New Comment", new_comment_path %>
   </ul>
-</section>
+</section> -->
+
+<h3>Comments</h3>
+  <% if current_author %>
+    <%= link_to "Add new comment", new_comment_path(@post) %>
+  <% end %>
+  <% @post.comments.each do |comment| %>
+    <div>
+      <p>
+	<%= comment.body %>
+      </p>
+      <% if can? :update, @comment %>
+	<%= link_to "Edit", edit_comment_path(@post, comment) %> |
+	<%= link_to "Delete", comment_path(@post, comment), method: :delete %>
+      <% end %>
+    </div>
+  <% end %>
