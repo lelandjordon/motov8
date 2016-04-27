@@ -14,10 +14,9 @@
   <%= f.text_field :title %>
 
   <%= f.label :body %>
-  <%= f.text_area :body, :maxlength => 5, :placeholder => "5 characters max" %>
+  <%= f.text_area :body, :maxlength => 141, :placeholder => "141 characters max" %>
 
-  <%= f.label :author %>
-  <%= f.text_field :author %>
+
 
   <%= f.submit %>
 <% end %>

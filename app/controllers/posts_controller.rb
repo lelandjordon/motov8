@@ -5,15 +5,18 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    authorize! :read, @post
   end
 
   def new
     @post = Post.new
+    authorize! :create, @post
   end
 
   def create
     @post = Post.new(post_params)
-    @post.author = current_author
+    authorize! :create, @post
+    @post.author_id = current_author
     if @post.save
       redirect_to @post, notice: "#{@post.title} sucessfully created."
     else
@@ -23,11 +26,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    authorize! :update, @post
   end
 
   def update
     @post = Post.find(params[:id])
-
+    authorize! :update, @post
     if @post.update(post_params)
       redirect_to @post, notice: "#{@post.title} sucessfully updated."
     else
@@ -37,6 +41,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    authorize! :destroy, @post
     @post.destroy
 
     redirect_to posts_path, notice: "#{@post.title} sucessfully destroyed"
