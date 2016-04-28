@@ -1,31 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app, motov8, was built for Project 2 during WDI9 at General Assembly DC.
+The goal was to build a two-model Rails app with CRUD abilities.
 
-Things you may want to cover:
+Additional gems installed include CanCanCan and bcrypt.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Currently depolyed at heroku.com:
+https://leland-motov8.herokuapp.com
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
 
 
 Project 2 app ERDs
