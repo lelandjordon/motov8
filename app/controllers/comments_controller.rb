@@ -1,9 +1,6 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
 
-  def index
-  end
-
   def show
   end
 
@@ -22,11 +19,12 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:post_id])
   end
 
   def update
     @post = Post.find(params[:post_id])
-    @comment.update(comment_params.merge(user:current_user))
+    @comment.update(comment_params.merge(author: current_author))
     if @comment.update(comment_params)
       redirect_to @comment.post, notice: "#{@comment.title} sucessfully updated."
     else
@@ -36,8 +34,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-
-    redirect_to comments_path, notice: "#{@comment.title} destroyed."
+    @post = Post.find(params[:post_id])
+    redirect_to @comment.post, notice: "#{@comment.title} destroyed."
   end
 
   private

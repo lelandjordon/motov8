@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
     else
       # incorrect email (no author with that email)
       # else, send them back to the log in form
+      flash[:notice] = "Please sign up to participate."
       render :new and return
     end
 
