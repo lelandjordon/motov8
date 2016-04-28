@@ -2,8 +2,8 @@
     <%= link_to post.title, post %>
     (by: <%= post.author.email %> )
     <% if can? :update, post %>
-      <%= link_to "(edit)", edit_post_path(@post) %>
-      <%= link_to "(delete)", post_path(@post),
+      <%= link_to "(edit)", edit_post_path(post) %>
+      <%= link_to "(delete)", post_path(post),
           method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
 

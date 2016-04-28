@@ -1,5 +1,7 @@
 <h2>Posts</h2>
-<h3><%= link_to "New Post", new_post_path %></h3>
+<% if can? :create, Post %>
+  <h3><%= link_to "New Post", new_post_path %></h3>
+<% end %>
 <ul>
   <%= render @posts %>
 </ul>
