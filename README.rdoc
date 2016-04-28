@@ -8,7 +8,8 @@ Additional gems installed include CanCanCan and bcrypt.
 Currently depolyed at heroku.com:
 https://leland-motov8.herokuapp.com
 
-
+Short video demo:
+https://youtu.be/LlnmfcMfTQo
 
 
 Project 2 app ERDs
