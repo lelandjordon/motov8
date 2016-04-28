@@ -9,7 +9,12 @@ class ApplicationController < ActionController::Base
     else
       return nil
     end
+  rescue ActiveRecord::RecordNotFound  # only fix this error, which was thrown in the browser.
+    session[:author_id] = nil
+    return nil
   end
+  # rescue, a Ruby feature, errors in Rails does this stuff
+
   alias :current_user :current_author
   helper_method :current_user
 
