@@ -11,7 +11,9 @@ class Ability
       can [:update, :destroy], Comment, :author_id => user.id
     end
 
-
+    # don't be afraid to delete old/unused code.
+    # alternatively if this was from a feature you started but didn't finish you could create a branch for it
+    
     # if user.admin
     #   can :manage, Post
     # end
