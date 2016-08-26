@@ -9,8 +9,7 @@ Currently depolyed at heroku.com:
 https://leland-motov8.herokuapp.com
 
 Short video demo:
-https://youtu.be/LlnmfcMfTQo
-
+https://www.youtube.com/watch?v=IvynbFt4dEI
 
 Project 2 app ERDs
 
