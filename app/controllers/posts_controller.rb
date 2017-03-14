@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def create
     @post.author = current_author
     if @post.save
+      puts "post created"
       redirect_to @post, notice: "#{@post.title} sucessfully created."
     else
       render :new

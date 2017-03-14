@@ -1,10 +1,11 @@
-<li>
-    <%= link_to post.title, post %>
-    (by: <%= post.author.email %> )
+<table class="table table-bordered">
+  <tbody>
+    <td><%= link_to post.title, post %></td>
+    <td>(by: <%= post.author.email %> )</td>
     <% if can? :update, post %>
-      <%= link_to "(edit)", edit_post_path(post) %>
-      <%= link_to "(delete)", post_path(post),
-          method: :delete, data: { confirm: 'Are you sure?' } %>
+      <td><%= link_to "(edit)", edit_post_path(post) %></td>
+      <td><%= link_to "(delete)", post_path(post),
+          method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
-
-</li>
+  </tbody>
+</table>
