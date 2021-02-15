@@ -19,6 +19,7 @@ class PostsController < ApplicationController
       render :new
     end
   end
+  # nice use of error handling and user notices
 
   def edit
   end
